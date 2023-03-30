@@ -1,34 +1,20 @@
 fun main() {
-    println("Hello World!")
-    var var1=10
-    var var2=10.1f
-    var var3=10.2
-    var var4='안'
-    var var5="안드로이드"
-
-    println(var1)
-    println(var2)
-    println(var3)
-    println(var4)
-    println(var5)
-
-    var myVar=100
-    myVar=200
+    //when문: 여러가지 경우에 따라 어떤 작업을 할지를 결정
+    //when은 switch~case 와 비슷하지만 break를 쓰지 않음
+    var count:Int=85
+    if(count>=90){
+        println("if문:합격(장학생)")
+    }else if(count>=60){
+        println("if문:합격")
+    }else{
+        println("if문:불합격")
+    }
     
-    var myVal=200
-    myVal=300 //오류
-
-    var a="100".toInt()
-    var b="100.123".toDouble()
-
-    println(a)
-    println(b)
-    
-    //var notNull:Int null -- 오류
-    var okNull:Int?=null //정상
-
-    var ary=ArrayList<Int>(1) //1개짜리 배열 리스트
-    ary!!.add(100) //깂 100을 추가
-
-
+    var jumsu: Int=(count/10)*10
+    when(jumsu){
+        100->println("when문:합격(장학생)")
+        90->println("when문:합격(장학생)")
+        80,70,60->println("when문:합격")
+        else->println("when문:불합격")
+    }
 }
