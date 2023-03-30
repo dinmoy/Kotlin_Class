@@ -23,6 +23,12 @@ fun main() {
 
     println(a)
     println(b)
+    
+    //var notNull:Int null -- 오류
+    var okNull:Int?=null //정상
+
+    var ary=ArrayList<Int>(1) //1개짜리 배열 리스트
+    ary!!.add(100) //깂 100을 추가
 
 
 }
