@@ -12,7 +12,14 @@ fun main() {
     two[1][2]=100
     two[2][3]=200
 
-    for(i in two.indices)
+    /*for(i in two.indices)
         for(j in two[i].indices)
-            println(two[i][j])
+            println(two[i][j])*/
+
+    for((i,row) in two.withIndex()){
+        for((j,col) in row.withIndex()){
+            print("($i,$j)=$col\t")
+        }
+        println()
+    }
 }
