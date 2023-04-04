@@ -1,15 +1,20 @@
 fun main() {
-    //ArrayList
-    var one=ArrayList<Int>(4)
-    one.add(10)
-    one.add(20)
-    one.add(30)
-    one.add(40)
-    one.add(50)
-    var sum=0
-    for(num in one){
-        sum+=num
-    }
-    println(sum)
-    //첫번째 값 + 두번째 값
+   //for문
+    /* for(변수 in 시작..끝 step 증가량){
+            //code
+       }
+     */
+    for(i in 1..10 step 1)
+        print("$i :: ")
+
+    println()
+    var leng=5;
+    //i<=5
+    for(j in 1..leng)
+        print("$j / ")
+
+    println()
+    //i<5 until은 맨 마지막 수는 포함 X
+    for(i in 1 until leng)
+        print("$i | ")
 }
