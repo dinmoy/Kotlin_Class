@@ -1,20 +1,22 @@
 fun main() {
-   //for문
-    /* for(변수 in 시작..끝 step 증가량){
-            //code
+
+    var one:IntArray= intArrayOf(10,20,30)
+    for(value in one){
+        println(value)
+    }
+    //while문
+    /* while(조건식){
+        //조건식이 true인 동안 이 부분을 실헹
        }
      */
-    for(i in 1..10 step 1)
-        print("$i :: ")
+    var two:Array<String> = arrayOf("하나","둘","셋")
+    for(i in 0..2 step 1){
+        println(two[i])
+    }
+    var k:Int=0
+    while(k<two.size){
+        println(two[k])
+        k++
+    }
 
-    println()
-    var leng=5;
-    //i<=5
-    for(j in 1..leng)
-        print("$j / ")
-
-    println()
-    //i<5 until은 맨 마지막 수는 포함 X
-    for(i in 1 until leng)
-        print("$i | ")
 }
