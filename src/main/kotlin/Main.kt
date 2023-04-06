@@ -1,22 +1,44 @@
 fun main() {
+    var Car1:Car=Car()
+    Car1.color="빨강"
+    Car1.speed=0
 
-    var one:IntArray= intArrayOf(10,20,30)
-    for(value in one){
-        println(value)
-    }
-    //while문
-    /* while(조건식){
-        //조건식이 true인 동안 이 부분을 실헹
-       }
-     */
-    var two:Array<String> = arrayOf("하나","둘","셋")
-    for(i in 0..2 step 1){
-        println(two[i])
-    }
-    var k:Int=0
-    while(k<two.size){
-        println(two[k])
-        k++
-    }
+    var Car2:Car=Car()
+    Car2.color="파랑"
+    Car2.speed=0
 
+    var Car3:Car=Car()
+    Car3.color="초록"
+    Car3.speed=0
+
+    Car1.upSpeed(50)
+    println("자동차1의 색상은 "+Car1.color+" 이며, 속도는 "+Car1.speed+" km입니다")
+
+    Car2.upSpeed(20)
+    println("자동차2의 색상은 "+Car2.color+" 이며, 속도는 "+Car2.speed+" km입니다")
+
+    Car3.upSpeed(250)
+    println("자동차3의 색상은 "+Car3.color+" 이며, 속도는 "+Car3.speed+" km입니다")
+
+}
+class Car{
+    var color:String=""
+    var speed:Int=0
+
+    constructor(color:String,speed:Int){
+        this.color=color
+        this.speed=speed
+    }
+    fun upSpeed(value: Int){
+        if(speed+value>=200)
+            speed=200
+        else
+            speed=speed+value
+    }
+    fun downSpeed(value: Int){
+        if(speed-value<=0)
+            speed=0
+        else
+            speed=speed-value
+    }
 }
