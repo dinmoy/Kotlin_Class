@@ -1,17 +1,11 @@
 fun main() {
-    var Car1:Car=Car("빨강",0)
-    var Car2:Car=Car("파랑",0)
-    var Car3:Car=Car("초록",0)
-
-    println("생산된 차의 대수(정적 필드) ==>"+Car.carCountzh)
-    println("생산된 차의대수(정적 메소드 ==>"+Car.currentCarCount())
-    println("차의 최고 제한속도==>"+Car.MAXSPEED)
-    println("PI의 값 -->"+Math.PI)
-    println("3의 5제곱==>"+Math.pow(3.0,5.0))
+    var auto: Automobbile=Automobbile()
+    auto.upSpeed(250)
+    println("승용차의 속도는 "+auto.speed+"km입니다")
 
 
 }
-class Car{
+open class Car{
     var color:String=""
     var speed:Int=0
 
@@ -34,7 +28,7 @@ class Car{
     constructor(){
 
     }
-    fun upSpeed(value: Int){
+    open fun upSpeed(value: Int){
         if(speed+value>=200)
             speed=200
         else
@@ -45,5 +39,21 @@ class Car{
             speed=0
         else
             speed=speed-value
+    }
+}
+class Automobbile: Car{
+    var seatNum:Int=0
+
+    constructor(){
+
+    }
+    fun countSeatNum(): Int{
+        return seatNum
+    }
+    open override fun upSpeed(value:Int){
+        if(speed+value>=300)
+            speed=300
+        else
+            speed=speed+value
     }
 }
