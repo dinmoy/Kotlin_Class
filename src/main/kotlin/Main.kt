@@ -1,5 +1,5 @@
 fun main() {
-    var Car1:Car=Car()
+    /*var Car1:Car=Car()
     Car1.color="빨강"
     Car1.speed=0
 
@@ -18,7 +18,11 @@ fun main() {
     println("자동차2의 색상은 "+Car2.color+" 이며, 속도는 "+Car2.speed+" km입니다")
 
     Car3.upSpeed(250)
-    println("자동차3의 색상은 "+Car3.color+" 이며, 속도는 "+Car3.speed+" km입니다")
+    println("자동차3의 색상은 "+Car3.color+" 이며, 속도는 "+Car3.speed+" km입니다")*/
+
+    var Car1:Car=Car("빨강",0)
+    var Car2:Car=Car("파랑",0)
+    var Car3:Car=Car("초록",0)
 
 }
 class Car{
