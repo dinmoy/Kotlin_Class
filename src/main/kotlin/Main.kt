@@ -1,59 +1,24 @@
-fun main() {
-    var auto: Automobbile=Automobbile()
-    auto.upSpeed(250)
-    println("승용차의 속도는 "+auto.speed+"km입니다")
-
-
+abstract class Animal{
+    var name:String=""
+    abstract fun move()
 }
-open class Car{
-    var color:String=""
-    var speed:Int=0
-
-    companion object {
-        var carCount:Int=0
-        const val MAXSPEED: Int = 200
-        const val MINSPEED: Int=0
-        //메서드명 뒤에 return타입 쓰기
-        fun currentCarCount(): Int{
-            return carCount
-        }
-    }
-    constructor(color:String,speed:Int){
-        this.color=color
-        this.speed=speed
-    }
-    constructor(speed:Int){
-        this.speed=speed
-    }
-    constructor(){
-
-    }
-    open fun upSpeed(value: Int){
-        if(speed+value>=200)
-            speed=200
-        else
-            speed=speed+value
-    }
-    fun downSpeed(value: Int){
-        if(speed-value<=0)
-            speed=0
-        else
-            speed=speed-value
+class Tiger:Animal(){
+    var age:Int=0
+    override fun move(){
+        println("네 발로 이동한다")
     }
 }
-class Automobbile: Car{
-    var seatNum:Int=0
+class Eagle: Animal(){
+    var hoome:String=""
+    override fun move(){
+        println("날개로 날아간다")
+    }
+}
+fun main(){
+    var tiger1=Tiger()
+    var eagle1=Eagle()
 
-    constructor(){
+    tiger1.move()
+    eagle1.move()
 
-    }
-    fun countSeatNum(): Int{
-        return seatNum
-    }
-    open override fun upSpeed(value:Int){
-        if(speed+value>=300)
-            speed=300
-        else
-            speed=speed+value
-    }
 }
